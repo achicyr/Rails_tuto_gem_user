@@ -11,6 +11,22 @@
   </head>
 
   <body>
+
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+
+
     <%= yield %>
+
+    
+    <p>
+        <%= debug user_signed_in? %>
+    </p>
+    <p>
+        <%= debug current_user %>
+    </p>
+    <p>
+        <%= debug session.to_h %>
+    </p>
   </body>
 </html>

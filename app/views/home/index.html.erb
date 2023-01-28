@@ -7,6 +7,10 @@
         <%= link_to  "Se déconnecter", destroy_user_session_path, data: {turbo_method: :delete, turbo_confirm: "Are you sure ?"} %>
     <% else %>
         <%= link_to  "Se connecter", new_user_session_path %>
+        <br/>
+        <%= link_to  "Se connecter via github", user_github_omniauth_authorize_path %>
+        <br/>
+        <%= link_to  "Se connecter via google", user_google_omniauth_callback_path %>
     <% end %>
 </p>
 

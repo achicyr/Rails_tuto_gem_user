@@ -8,6 +8,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
     :recoverable, :rememberable, :validatable, :trackable
+  devise :omniauthable, omniauth_providers: [:github, :google]
 
 
   def self.find_first_by_auth_conditions(warden_conditions)
@@ -25,6 +26,15 @@ class User < ApplicationRecord
       puts "else"
       puts a.inspect
       a
+    end
+  end
+
+  def self.from_facebook(auth)
+    where(facebook_id: auth.uid).first_or_create do |user|
+      user.email = auth.info.email
+      user.username = auth.info.name
+      user.password = Devise.friendly_token[0,20]
+      user.skip_confirmation!
     end
   end
   

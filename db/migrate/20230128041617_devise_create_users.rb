@@ -34,6 +34,12 @@ class DeviseCreateUsers < ActiveRecord::Migration[7.0]
       # t.datetime :locked_at
 
 
+      ## Omniauthable
+      t.string :facebook_id
+      t.string :google_id
+
+
+
       t.timestamps null: false
     end
 

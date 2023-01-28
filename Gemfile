@@ -2,6 +2,10 @@ source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 gem "devise"
+gem "omniauth"
+# gem "omniauth-facebook"
+gem 'omniauth-github', github: 'omniauth/omniauth-github', branch: 'master'
+gem 'omniauth-google-oauth2'
 
 ruby "2.7.0"
 

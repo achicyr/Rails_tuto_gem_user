@@ -42,7 +42,7 @@ class PostsController < ApplicationController
   # POST /posts or /posts.json
   def create
     # @post = Post.new(post_params)
-    @post = current_user.posts.new(post_params) # AFIN DE NE PAS AVOIR À REMPLIR LA CASE user_id LORSQUE LE User CRÉE UN NOUVEL ARTICLE
+    @post = current_user.posts.new(post_params) # AFIN D'ASSOCIER DIRECTEMENT LE POST CRÉÉ AU current_user
 
     respond_to do |format|
       if @post.save
@@ -86,7 +86,7 @@ class PostsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def post_params
-      params.require(:post).permit(:name, :content, :user_id)
-      params.require(:post).permit(:name, :content) # ON EMPECHE DE POUVOIR MODIFIER À QUEL user APPARTIENT CE @post
+      # params.require(:post).permit(:name, :content, :user_id, :image)
+      params.require(:post).permit(:name, :content, :image) # ON EMPECHE DE POUVOIR MODIFIER À QUEL user APPARTIENT CE @post
     end
 end

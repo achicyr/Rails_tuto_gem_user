@@ -1,24 +1,3 @@
-<%= simple_form_for @post, html: {class: "okok"}, wrapper: :horizontal_form do |f| %>
-  <%= f.input :name %>
-  <%= f.input :content, label: "pas conteeeeent!", as: :file, wrapper: :horizontal_file %>
-  <p>
-    pour voir les associations: 
-    <%= link_to "okok", :edit_user_registration %>
-  </p>
-  <%= f.input :content, as: :string, input_html: {class:"form-datepicker"}, label_html: {class:"laaaabbeeeel"} %>
-  <%= f.input :user, as: :string, input_html: {class:"form-datepicker"}, label_html: {class:"laaaabbeeeel"} %>
-  <%= f.input :country %>
-  <%= f.input :country, as: :string %>
-  <%= f.button :submit %>
-<% end %>
-==========
-
-
-
-
-
-
-
 <%= form_with(model: post) do |form| %>
   <% if post.errors.any? %>
     <div style="color: red">

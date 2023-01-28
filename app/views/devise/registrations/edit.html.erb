@@ -1,3 +1,19 @@
+<%= simple_form_for @user, url: user_registration_path(@user), html: {class: "okok"}, wrapper: :horizontal_form do |f| %>
+  <%= f.association :posts %>
+  <%= f.association :posts, as: :radio_buttons %>
+  <%= f.association :posts, as: :check_boxes %>
+  <div style="border:solid;">
+    <p>CHAMPS TRÈS SPÉCIAL PERMETTANT DIRECTEMENT MODIFIER UN POST (ET DONC LA PROPRIÉTÉ D'UN ASSOCIATION)</p>
+    <p>jetez-y un coup d'oeil et inspectez le input suivant:</p>
+    <%= f.simple_fields_for :posts do |ff| %>
+      <%= ff.input :name %>
+    <% end %>
+  </div>
+  <%#= f.association :posts, collection: @user.posts, multiple: false %>
+  <%#= f.input :posts, collection: @user.posts, multiple: false %>
+<% end %>
+
+
 <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>

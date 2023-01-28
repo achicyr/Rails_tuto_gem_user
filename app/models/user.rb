@@ -1,5 +1,7 @@
 class User < ApplicationRecord
 
+  has_many :posts
+  
   attr_accessor :login
   
   validates :username, presence: true, uniqueness: {case_sensitive: false}, format: {with:/\A[a-zA-Z0-9 _\.]*\Z/}

@@ -24,6 +24,12 @@ class PostsController < ApplicationController
     
     # authorize! :read, Post# Authorise seulement les users ayants étés authorisés à :read (défini dans model Ability)
     @posts = Post.all
+    # RÉCUPÉRER DANS LE CACHE SE FAIT COMME SUIS (....mais j'avoue en vrai je n'y comprend rien xD)
+    # @posts = Rails.cache.fetch('posts_homepage') do 
+    # @posts = Rails.cache.read('posts_homepage') do # lecture auto
+    # @posts = Rails.cache.write('posts_homepage') do # écriture auto
+    #   Post.limit(10).all.to_a
+    # end
   end
 
   # GET /posts/1 or /posts/1.json

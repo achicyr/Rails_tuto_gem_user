@@ -1,5 +1,11 @@
 <div id="<%= dom_id post %>">
   <p>
+    <strong>Image:</strong>
+    <%# if @post.image? %>
+      <%= image_tag post.image_url(:thumb) %>
+    <%# end %>
+  </p>
+  <p>
     <strong>Name:</strong>
     <%= post.name %>
   </p>

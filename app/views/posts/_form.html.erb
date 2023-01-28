@@ -1,5 +1,29 @@
 <%= simple_form_for @post, html: {class: "okok"}, wrapper: :horizontal_form do |f| %>
   <%= f.input :name %>
+  <%= f.input :content %>
+  <%# if @post.image? %>
+    <%= image_tag @post.image_url(:thumb) %>
+  <%# end %>
+  <%= f.input :image, as: :file, wrapper: :horizontal_file %>
+  <%= f.button :submit %>
+  <p>
+    GRACE À "carriewave" DANS LE TERMINAL (rails c) IL EST POSSIBLE D'UTILISER DES MÉTHODES
+    SUR UNE INSTANCE DE Post PERMETTANTS DE RÉALISER DES TRAVAIL SUR LES IMAGES:
+    <ul>
+      <li>p.image.recreate_versions!</li>
+      <li>p.remove_image!</li>
+      <li>p.remote_image_url = "URL_À_FOURNIR"</li>
+    </ul>
+    ET À LA FIN IL SUFFIT DE FAIRE: p.save POUR TOUT SAUVEGARDER
+  </p>
+<% end %>
+<hr>
+==========
+==========
+==========
+<hr>
+<%= simple_form_for @post, html: {class: "okok"}, wrapper: :horizontal_form do |f| %>
+  <%= f.input :name %>
   <%= f.input :content, label: "pas conteeeeent!", as: :file, wrapper: :horizontal_file %>
   <p>
     pour voir les associations: 
@@ -11,7 +35,11 @@
   <%= f.input :country, as: :string %>
   <%= f.button :submit %>
 <% end %>
+<hr>
 ==========
+==========
+==========
+<hr>
 
 
 

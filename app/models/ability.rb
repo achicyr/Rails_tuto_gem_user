@@ -21,7 +21,7 @@ class Ability
     # can [:crud,:me], Post, {user_id: user.id}
 
 
-    alias_action :create, :read, :update, :delete, to: :crud
+    alias_action :create, :read, :update, :destroy, to: :crud
     can [:read], Post # JE PEUX FAIRES VOIR TOUS
     if
       can [:crud], Post, {user_id: user.id} # TOUTES LES ACTIONS :crud MAIS SEULEMENT S'IL M'APPARTIENT

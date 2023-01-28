@@ -8,6 +8,9 @@ gem 'cancancan'
 # http://blog.plataformatec.com.br/tag/simple_form/
 gem 'simple_form'
 gem 'country_select'
+# https://github.com/carrierwaveuploader/carrierwave
+gem 'mini_magick'
+gem 'carrierwave', '>= 3.0.0.beta', '< 4.0'
 
 ruby "2.7.0"
 

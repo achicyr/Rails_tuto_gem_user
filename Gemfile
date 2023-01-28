@@ -2,7 +2,12 @@ source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 gem "devise"
+# https://github.com/CanCanCommunity/cancancan
 gem 'cancancan'
+# https://github.com/heartcombo/simple_form
+# http://blog.plataformatec.com.br/tag/simple_form/
+gem 'simple_form'
+gem 'country_select'
 
 ruby "2.7.0"
 

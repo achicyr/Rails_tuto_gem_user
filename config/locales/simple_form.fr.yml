@@ -1,0 +1,35 @@
+fr:
+  simple_form:
+    "yes": 'Oui'
+    "no": 'Non'
+    required:
+      text: 'required'
+      mark: '*=__$$'
+      # You can uncomment the line below if you need to overwrite the whole required html.
+      # When using html, text and mark won't be used.
+      # html: '<abbr title="required">*</abbr>'
+    error_notification:
+      default_message: "Please review the problems below:"
+    # Examples
+    labels:
+      defaults:
+        password: 'Mot de passe'
+        name: "mon nooooom!! (je suis dans /config/locales/simple_form.fr.yml ...shuuuuuut)"
+        user: "kk"
+      post:
+        user: "moi user nouveau nom!?"
+      user:
+        new:
+          email: "E-mail pour s'authentifier."
+        edit:
+          email: "E-mail pour s'authentifier."
+    # hints:
+    #   defaults:
+    #     username: 'User name to sign in.'
+    #     password: 'No special characters, please.'
+    # include_blanks:
+    #   defaults:
+    #     age: 'Rather not say'
+    # prompts:
+    #   defaults:
+    #     age: 'Select your age'

@@ -1,10 +1,23 @@
 <p style="color: green"><%= notice %></p>
 
 <h1>Posts</h1>
-
+<p>
+un guide rails parle du cache: 
+https://guides.rubyonrails.org/caching_with_rails.html
+<hr>
+2 helpers existent permettent auss de mettre en cahce les données:
+<ul>
+  <li>cache_if</li>
+  <li>cache_unless</li>
+</ul>
+mais il est aussi possible d'intéragir avec le cache dans le contorller (voir action posts#index)
+</p>
 <div id="posts">
   <% @posts.each do |post| %>
-    <%= render post %>
+    <%= cache post do %>
+      <%= render post %>
+    <% end %>
+    <%#= render post, cache: true %>
     <p>
       <%= link_to "Show this post", post %>
     </p>
